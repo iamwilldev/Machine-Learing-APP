@@ -21,7 +21,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import plotly.express as px
 import seaborn as sns
-from streamlit_pandas_profiling import st_profile_report
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.model_selection import KFold
 from sklearn.neighbors import KNeighborsClassifier
