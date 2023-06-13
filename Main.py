@@ -1,3 +1,22 @@
+import subprocess
+
+# List of required modules
+modules = [
+    'streamlit',
+    'pandas',
+    'pandas-profiling',
+    'matplotlib',
+    'plotly',
+    'seaborn',
+    'streamlit-pandas-profiling',
+    'scikit-learn'
+]
+
+# Install the modules
+for module in modules:
+    subprocess.call(['pip', 'install', module])
+
+# Import the modules
 import streamlit as st
 import os
 import pandas as pd
