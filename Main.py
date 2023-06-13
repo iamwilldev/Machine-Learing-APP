@@ -4,7 +4,6 @@ import subprocess
 modules = [
     'streamlit',
     'pandas',
-    'pandas-profiling',
     'matplotlib',
     'plotly',
     'seaborn',
@@ -20,7 +19,6 @@ for module in modules:
 import streamlit as st
 import os
 import pandas as pd
-import pandas_profiling
 import matplotlib.pyplot as plt
 import plotly.express as px
 import seaborn as sns
@@ -42,7 +40,7 @@ def main():
     st.sidebar.markdown("<p style='text-align: center;'>Penambangan Data C</p>", unsafe_allow_html=True)
     st.sidebar.title("Navigation")
     
-    navigation = st.sidebar.radio("Go to", ["Upload", "Data Profiling", "Data Normalization", "Data Setting", "Visualization", "Evaluate", "Implementation"])
+    navigation = st.sidebar.radio("Go to", ["Upload", "Data Normalization", "Data Setting", "Visualization", "Evaluate", "Implementation"])
     
     if os.path.exists("sourcedata.csv"):
         df = pd.read_csv("sourcedata.csv", index_col=None)
@@ -57,11 +55,6 @@ def main():
                 df = pd.read_csv(file, index_col=None)
             df.to_csv("sourcedata.csv", index=None)
             st.dataframe(df)
-    
-    elif navigation == "Data Profiling":
-        st.title("Data Profiling")
-        profile_report = df.profile_report()
-        st_profile_report(profile_report)
     
     elif navigation == "Data Normalization":
         st.title("Data Normalization with MinMaxScalar")
