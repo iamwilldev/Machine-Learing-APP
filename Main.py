@@ -7,7 +7,6 @@ modules = [
     'matplotlib',
     'plotly',
     'seaborn',
-    'streamlit-pandas-profiling',
     'scikit-learn'
 ]
 
